@@ -7,8 +7,6 @@ express()
 
     .use(express.static(path.join(__dirname, 'public'))) //declaramos estático el contenido de una carpeta public
 
-    .use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"))
-
     .set('views', path.join(__dirname, 'views')) //declaramos estático el contenido de una carpeta views
 
     .engine("handlebars", exphbs.engine({
