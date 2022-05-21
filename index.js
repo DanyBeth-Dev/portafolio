@@ -16,6 +16,6 @@ express()
     
     .set("view engine", "handlebars") //configuración de renderizado
 
-    .get('/', (req, res) => res.render('pages/index')) //ruta
+    .get('/', (req, res) => res.render('index')) //ruta
 
     .listen(PORT, () => console.log(`Listening on ${PORT}`)); //puerto
