@@ -10,10 +10,10 @@
           <a class="nav-link" href="#Sobre-Mi">Sobre mi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Trabajos">Trabajos</a>
+          <a class="nav-link" href="#Experiencia">Experiencia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Experiencia">Experiencia</a>
+          <a class="nav-link" href="#Trabajos">Trabajos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#Contacto">Contacto</a>
@@ -159,6 +159,35 @@
     </div>
     <div>
         <p>¿Quieres conocer más de mí?</p>
-        <a href="https://tqwnhsntg60.typeform.com/to/dW6TnNfu" target="_blank"><button class="btn bg-secondary text-white">Comenzar</button></a>
+        <button data-tf-popup="dW6TnNfu" data-tf-hide-headers data-tf-iframe-props="title=Mi Portafolio" data-tf-medium="snippet" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#B8C2D4;color:#000000;font-size:20px;border-radius:25px;padding:0 33px;font-weight:bold;height:50px;cursor:pointer;line-height:50px;text-align:center;margin:0;text-decoration:none;">Comenzar</button><script src="//embed.typeform.com/next/embed.js"></script>
     </div>
 </section>
+
+<footer id="Footer" class="text-center text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <h1 class="fw-bold text-uppercase">daniela</h1>
+            </div>
+            <div class="col-12 col-sm-6">
+                <a href="https://github.com/DanyBeth/" target="_blank">
+                    <i class="fa-brands fa-github fa-3x mx-2"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/dev-danielahernandez/" target="_blank">
+                    <i class="fa-brands fa-linkedin fa-3x mx-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    $(document).ready(function () {
+        $("a").click(function () {
+            var gato = this.hash
+            $("html, body").animate({
+                scrollTop: $(gato).offset().top - 70
+            }, 800);
+        });
+    });
+</script>

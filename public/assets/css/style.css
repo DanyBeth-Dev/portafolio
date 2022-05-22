@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: auto !important;
+}
+
 body {
     font-family: Helvetica;
 }
@@ -96,4 +100,19 @@ body {
 #Contacto h1 {
     font-family: "Oswald";
     font-size: 52px;
+}
+
+/* Footer */
+
+#Footer {
+    background-color: #660066;
+}
+
+#Footer h1 {
+    font-family: "Oswald";
+}
+
+#Footer a {
+    color: white;
+    text-decoration: none;
 }
