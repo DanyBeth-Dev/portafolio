@@ -15,6 +15,11 @@ const pool = new Pool({
 express()
 
     .use(express.static(path.join(__dirname, 'public'))) //declaramos estático el contenido de una carpeta public
+    .use("/BootstrapCss", express.static(`${__dirname}/node_modules/bootstrap/dist/css/`)) //ruta estática para disponibilizar CSS de Bootstrap
+    .use("/CSS", express.static(`${__dirname}/public/assets/css/`))
+    .use("/BootstrapJs", express.static(__dirname + "/node_modules/bootstrap/dist/js/")) //ruta estática para disponibilizar Bootstrap Bundle
+    .use("/Axios", express.static(__dirname + "/node_modules/axios/dist/")) //ruta estática Axios
+    .use("/jQuery", express.static(__dirname + "/node_modules/jquery/dist/")) //ruta estática jQuery
 
     .set('views', path.join(__dirname, 'views')) //declaramos estático el contenido de una carpeta views
 
@@ -26,18 +31,5 @@ express()
     .set("view engine", "handlebars") //configuración de renderizado
 
     .get('/', (req, res) => res.render('Index')) //ruta
-
-    .get('/db', async (req, res) => {
-        try {
-            const client = await pool.connect();
-            const result = await client.query('SELECT * FROM test_table');
-            const results = { 'results': (result) ? result.rows : null };
-            res.render('pages/db', results);
-            client.release();
-        } catch (err) {
-            console.error(err);
-            res.send("Error " + err);
-        }
-    })
 
     .listen(PORT, () => console.log(`Listening on ${PORT}`)); //puerto
