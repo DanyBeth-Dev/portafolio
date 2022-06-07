@@ -13,7 +13,12 @@ const pool = new Pool({
 });
 
 express()
-
+    .use((req, res, next) => {
+        if (req.header('x-forwarded-proto') !== 'https')
+        res.redirect(`https://${req.header('host')}${req.url}`)
+        else
+        next()
+    })
     .use(express.static(path.join(__dirname, 'public'))) //declaramos estático el contenido de una carpeta public
     .use("/BootstrapCss", express.static(`${__dirname}/node_modules/bootstrap/dist/css/`)) //ruta estática para disponibilizar CSS de Bootstrap
     .use("/CSS", express.static(`${__dirname}/public/assets/css/`))
